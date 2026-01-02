@@ -19,18 +19,6 @@ Run the following commands:
 ```bash
 ./build.sh
 ```
-
-### Manual Setup Steps
-1. **Clone the Repository**:
-   ```bash
-    git clone https://github.com/gabereiser/Vulkan.Net.git
-    cd Vulkan.Net
-    git submodule update --init --recursive
-   ```
-2. **Install Dependencies**:
-   - Install **.NET SDK** (9+).
-   - Ensure the **Vulkan SDK** is installed and accessible.
-
 --- 
 
 ## Setup Instructions
