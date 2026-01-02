@@ -1,0 +1,8 @@
+.vscode
+*.exe
+*.pdb
+*.dll
+Release/**
+**/bin
+**/obj
+Vk.cs
