@@ -9,7 +9,7 @@ This project provides bindings for the **Vulkan API** in **.NET**, allowing deve
 ## Prerequisites
 - **[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)** installed on your system (ensure it includes headers and libraries).
   Download and extract to a directory like `C:/VulkanSDK`.
-- **.NET Core 3.1+ / .NET 5+** or **.NET Framework 4.8+**.
+- **.NET 9+**.
 
 --- 
 
@@ -17,22 +17,18 @@ This project provides bindings for the **Vulkan API** in **.NET**, allowing deve
 ### Quick Start
 Run the following commands:
 ```bash
-cd BindGen && dotnet publish -c Release -o ../
-cd .. && ./BindGen.exe
-cp -rf Vk.cs Vulkan/Vk.cs
-cd Vulkan && dotnet publish -c Release -o ../Release
-cd ..
-echo "Build completed successfully!"
+./build.sh
 ```
 
 ### Manual Setup Steps
 1. **Clone the Repository**:
    ```bash
-git clone https://github.com/your-repo/Vulkan.NET-Bindings.git
-   cd Vulkan.NET-Bindings
+    git clone https://github.com/gabereiser/Vulkan.Net.git
+    cd Vulkan.Net
+    git submodule update --init --recursive
    ```
 2. **Install Dependencies**:
-   - Install **.NET SDK** (3.1+ or 5+).
+   - Install **.NET SDK** (9+).
    - Ensure the **Vulkan SDK** is installed and accessible.
 
 --- 
@@ -80,31 +76,10 @@ Console.WriteLine("Swap chain created successfully!");
 --- 
 
 ## Dependencies
-### Required Libraries
-- **SharpVk**: A .NET wrapper for Vulkan headers.
-  Install via NuGet:
-  ```bash
-dotnet add package SharpVk
-```
+- Vulkan being present on the system and that's it.
 
 ### Tools
 - **BindGen**: Generates `.cs` bindings. Ensure it is in your `PATH`.
 
 --- 
-
-## Troubleshooting
-### Common Issues
-1. **Missing DLLs**: Ensure `vulkan-1.dll` is accessible.
-   - Place it in a directory included in your system `PATH`.
-2. **Initialization Errors**: Verify:
-   - Vulkan SDK installation and headers are correct.
-   - Environment variables for extensions are set properly.
-
-### Debugging Steps
-Run `vkcube --version` to verify Vulkan:
-```bash
-vkcube --version
-```
-If this fails, check your Vulkan SDK installation.
-
 
