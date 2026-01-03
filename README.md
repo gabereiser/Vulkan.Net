@@ -37,32 +37,6 @@ Ensure `vulkan-1.dll` is in your system `PATH`. If not, specify its location.
 
 --- 
 
-## Usage Examples
-### Initializing a Vulkan Instance
-```csharp /Vulkan/Vk.cs
-using System;
-using Vulkan;
-
-class Program
-{
-    static void Main()
-    {
-        var appInfo = new VkApplicationInfo("MyApp", "1.0", null);
-        var instance = new VkInstance(appInfo, new[] { VK_KHR_SURFACE });
-        Console.WriteLine("Vulkan instance created successfully!");
-    }
-}
-```
-
-### Creating a Swap Chain
-```csharp /Vulkan/Vk.cs
-var surfaceCreateInfo = new VkSurfaceCreateInfoKHR(VK_SURFACE_CREATE_FLAGS, null, null);
-var swapChain = instance.CreateSwapChain(surfaceCreateInfo);
-Console.WriteLine("Swap chain created successfully!");
-```
-
---- 
-
 ## Dependencies
 - Vulkan being present on the system and that's it.
 
